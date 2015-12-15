@@ -20,10 +20,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand">Test App</a>
+                    <a href="<?=Request::$basePath?>" class="navbar-brand">Test App</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="<?=Request::$basePath?>/index.php/wiki">Pages</a></li>
+                        <li><a href="<?=Request::$basePath?>/index.php/wiki/new">New Page</a></li>
+                    </ul>
+
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                         </li>

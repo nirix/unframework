@@ -12,19 +12,26 @@ if ($page) {
 
         if ($data = Request::$post->get('wiki')) {
             $name = isset($data['name']) ? $data['name'] : false;
+            $slug = isset($data['slug']) ? $data['slug'] : false;
             $content = isset($data['content']) ? $data['content'] : false;
         }
 
-        if (empty($name) || empty($content)) {
+        if (empty($name) || empty($slug) || empty($content)) {
             return render('wiki/edit.phtml', ['page' => $page, 'error' => true]);
         } else {
-            $query = db()->prepare("UPDATE pages SET name = :name, content = :content WHERE slug = :slug LIMIT 1");
-            $query->bindValue(':name', $name);
-            $query->bindValue(':content', $content);
-            $query->bindValue(':slug', $page['slug']);
+            $query = db()->prepare("
+                UPDATE pages
+                SET name = :name, slug = :slug, content = :content
+                WHERE id = :id
+                LIMIT 1
+            ");
+            $query->bindValue(':name', $name, PDO::PARAM_STR);
+            $query->bindValue(':content', $content, PDO::PARAM_STR);
+            $query->bindValue(':slug', $slug, PDO::PARAM_STR);
+            $query->bindValue(':id', $page['id'], PDO::PARAM_INT);
             $query->execute();
 
-            return redirect("/wiki/{$page['slug']}");
+            return redirect("/wiki/{$slug}");
         }
     }
 } else {

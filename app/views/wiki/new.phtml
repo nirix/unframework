@@ -1,7 +1,7 @@
 <div class="container">
-    <h1 class="page-header"><?=$page['name']?></h1>
+    <h1 class="page-header">New Page</h1>
 
-    <form action="<?=Request::$basePath?>/index.php/wiki/<?=$page['slug']?>/edit" method="post" class="form-horizontal">
+    <form action="<?=Request::$basePath?>/index.php/wiki/new" method="post" class="form-horizontal">
         <?php if (isset($error) && $error) : ?>
         <div class="alert alert-danger">
             Please fill in all fields.

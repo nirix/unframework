@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="pull-right">
+        <a href="<?=Request::$basePath?>/index.php/wiki/<?=$page['slug']?>/edit" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+    </div>
+    <h1 class="page-header"><?=$page['name']?></h1>
+
+    <?=$page['content']?>
+</div>

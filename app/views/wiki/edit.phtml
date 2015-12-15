@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="page-header"><?=$page['name']?></h1>
+
+    <form action="<?=Request::$basePath?>/index.php/wiki/<?=$page['slug']?>/edit" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label for="name" class="control-label col-md-3">Name</label>
+            <div class="col-md-9">
+                <input name="wiki[name]" id="name" class="form-control" value="<?=$page['name']?>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="slug" class="control-label col-md-3">Slug</label>
+            <div class="col-md-9">
+                <input name="wiki[slug]" id="slug" class="form-control" value="<?=$page['slug']?>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="content" class="control-label col-md-3">Content</label>
+            <div class="col-md-9">
+                <textarea name="wiki[content]" id="content" class="form-control"><?=$page['content']?></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-9 col-md-offset-3">
+                <button type="submit" class="btn btn-success">Save</button>
+                <button type="reset" class="btn btn-default">Reset</button>
+            </div>
+        </div>
+    </form>
+</div>

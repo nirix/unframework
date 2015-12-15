@@ -5,6 +5,8 @@ to handle initialisation and route a request to a specific file.
 
 There are no controllers, no database models, no templating systems.
 
+An example site can be found in the `app/` directory.
+
 ## Requirements
 
 - Latest, _actively supported_, stable version of PHP

@@ -1,8 +1,24 @@
 {
+    "name": "nirix/unframework",
+    "description": "Not a framework.",
+    "keywords": ["routing", "templating"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nirix"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/nirix/unframework/issues"
+    },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
             "Unf\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\": "app/"
         }
     },
     "require-dev": {

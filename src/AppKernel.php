@@ -98,7 +98,7 @@ class AppKernel
         if ($route) {
             Kernel::process("{$this->path}/{$route}");
         } else {
-            die(sprintf("No route matches [%s]", Request::$pathInfo));
+            throw new Exception(sprintf("No route matches [%s]", Request::$pathInfo));
         }
     }
 }

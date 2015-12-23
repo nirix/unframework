@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Unframework - Not a framework for PHP</title>
+		<link href='https://fonts.googleapis.com/css?family=Condiment|Caveat' rel='stylesheet' type='text/css'>
+		<style>
+			body {
+				background: url('assets/img/bg.png');
+				color: #ff008a;
+				font-family: 'Caveat';
+			}
+
+			.container {
+				width: 1024px;
+				margin: 0 auto;
+			}
+
+			h1 {
+				color: #ff008a;
+				font-family: 'Condiment', cursive;
+				font-size: 5em;
+				text-shadow: #ff008a 0 0 25px;
+				transform: rotate(-7deg);
+				margin-top: 0;
+			}
+
+			header span {
+				font-size: 2em;
+				position: relative;
+				left: 120px;
+				top: -55px;
+			}
+
+			main {
+				background: rgba(0, 0, 0, 0.7);
+				padding: 10px 15px;
+				font-size: 1.5em;
+				border-radius: 20px;
+				text-shadow: #ff008a 0 0 2px;
+				font-family: monospace;
+			}
+
+			main p:first-child {
+				margin-top: 0;
+			}
+
+			a {
+				color: #ff008a;
+				text-shadow: #ff008a 0 0 10px;
+				text-decoration: underline;
+				font-family: 'Caveat', cursive;
+			}
+
+			a:hover {
+				animation: blink 0.2s steps(5, start) infinite;
+			}
+
+			footer {
+				font-size: 1.1em;
+				text-align: center;
+			}
+
+			@keyframes blink {
+				to {
+					visibility: hidden;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Unframework</h1>
+				<span>Totally not a framework!</span>
+			</header>
+			<main>
+				<p>
+					Unframework is <strong>not</strong> a framework, it is essentially just a few classes (most static)
+					to handle initialisation and route a request to a specific file.
+				</p>
+				<p>
+					There are no controllers, no database models, no templating systems. It is designed to be as
+					lightweight and fast as possible and not get in your way.
+				</p>
+				<p>
+					You are free to use whatever database, whatever resource hogging POS ORM, whatever templating system
+					you want.
+				</p>
+				<p>
+					You may think it's all a joke, and this website certainly makes it appear that way, but you won't be
+					laughing when you see how much crap is involved when using something like Symfony or Laravel.
+				</p>
+				<p>
+					Needless middleware, bundles, compiling/caching. THIS IS <em>PHP</em>, <strong>NOT C++</strong>
+				</p>
+				<p>
+					Unframework is a serious project with a stupid name and an extremely idiotic website. You should use it.
+				</p>
+				<p>
+					Find the source code on <a href="https://github.com/nirix/unframework">GitHub</a>.
+				</p>
+			</main>
+			<footer>
+				&copy; 2015
+			</footer>
+		</div>
+	</body>
+</html>

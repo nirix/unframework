@@ -3,102 +3,52 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Unframework - Not a framework for PHP</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Condiment|Caveat' rel='stylesheet' type='text/css'>
-		<style>
-			body {
-				background: url('assets/img/bg.png');
-				color: #ff008a;
-				font-family: 'Caveat';
-			}
 
-			.container {
-				width: 1024px;
-				margin: 0 auto;
-			}
-
-			h1 {
-				color: #ff008a;
-				font-family: 'Condiment', cursive;
-				font-size: 5em;
-				text-shadow: #ff008a 0 0 25px;
-				transform: rotate(-7deg);
-				margin-top: 0;
-			}
-
-			header span {
-				font-size: 2em;
-				position: relative;
-				left: 120px;
-				top: -55px;
-			}
-
-			main {
-				background: rgba(0, 0, 0, 0.7);
-				padding: 10px 15px;
-				font-size: 1.5em;
-				border-radius: 20px;
-				text-shadow: #ff008a 0 0 2px;
-				font-family: monospace;
-			}
-
-			main p:first-child {
-				margin-top: 0;
-			}
-
-			a {
-				color: #ff008a;
-				text-shadow: #ff008a 0 0 10px;
-				text-decoration: underline;
-				font-family: 'Caveat', cursive;
-			}
-
-			a:hover {
-				animation: blink 0.2s steps(5, start) infinite;
-			}
-
-			footer {
-				font-size: 1.1em;
-				text-align: center;
-			}
-
-			@keyframes blink {
-				to {
-					visibility: hidden;
-				}
-			}
-		</style>
+		<!-- Fuck it, we'll do it live -->
+		<link rel="stylesheet/less" type="text/css" href="assets/style.less" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js" type="text/javascript"></script>
 	</head>
 	<body>
-		<div class="container">
-			<header>
+		<header id="main-header">
+			<div class="container">
 				<h1>Unframework</h1>
-				<span>Totally not a framework!</span>
-			</header>
+				<span>The fastest PHP framework!</span>
+			</div>
+		</header>
+		<div class="container">
 			<main>
 				<p>
-					Unframework is <strong>not</strong> a framework, it is essentially just a few classes (most static)
-					to handle initialisation and route a request to a specific file.
+					Unframework is the fastest PHP framework!
+				</p>
+				<p>
+					Actually, it's barely a framework, it is essentially just a few classes (most static) to handle
+					initialisation and route a request to a specific file.
 				</p>
 				<p>
 					There are no controllers, no database models, no templating systems. It is designed to be as
 					lightweight and fast as possible and not get in your way.
 				</p>
 				<p>
-					You are free to use whatever database, whatever resource hogging POS ORM, whatever templating system
-					you want.
+					You are free to use whatever database system you want, which should be PDO.
 				</p>
+
+				<hr>
+
 				<p>
 					You may think it's all a joke, and this website certainly makes it appear that way, but you won't be
 					laughing when you see how much crap is involved when using something like Symfony or Laravel.
 				</p>
 				<p>
-					Needless middleware, bundles, compiling/caching. THIS IS <em>PHP</em>, <strong>NOT C++</strong>
+					Such as needless middleware, bundles, compiling/caching. THIS IS <em>PHP</em>, <strong>NOT C++</strong>,
+					all you should have to do is write some code and refresh the page, not spend time recaching everything.
 				</p>
 				<p>
-					Unframework is a serious project with a stupid name and an extremely idiotic website. You should use it.
+					Unframework is a serious project with a stupid name and website. Don't be afraid to use it.
 				</p>
 				<p>
-					Find the source code on <a href="https://github.com/nirix/unframework">GitHub</a>.
+					Find the source code on <a href="https://github.com/nirix/unframework">GitHub</a> with an example app.
 				</p>
 			</main>
 			<footer>

@@ -1,7 +1,7 @@
 <?php
 /*!
  * Unframework
- * Copyright (c) 2015 Jack P.
+ * Copyright (c) 2015-2016 Jack P.
  *
  * Unframework is released under the MIT license.
  */
@@ -10,9 +10,10 @@ namespace Unf;
 
 use Exception;
 use ReflectionClass;
-use Unf\HTTP\Request;
+use Unf\Request;
 use Unf\Router;
 use Unf\View;
+use Unf\NoRouteFoundException;
 
 /**
  * Application kernel.

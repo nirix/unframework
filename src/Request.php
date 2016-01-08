@@ -1,12 +1,12 @@
 <?php
 /*!
  * Unframework
- * Copyright (c) 2015 Jack P.
+ * Copyright (c) 2015-2016 Jack P.
  *
  * Unframework is released under the MIT license.
  */
 
-namespace Unf\HTTP;
+namespace Unf;
 
 /**
  * HTTP request.
@@ -130,6 +130,10 @@ class Request
      */
     public static function matches($path)
     {
+        foreach (static::$properties->properties as $property => $value) {
+            $path = str_replace("{{$property}}", $value, $path);
+        }
+
         return preg_match("#^{$path}$#", static::$pathInfo);
     }
 }

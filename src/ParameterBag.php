@@ -1,19 +1,21 @@
 <?php
 /*!
  * Unframework
- * Copyright (c) 2015 Jack P.
+ * Copyright (c) 2015-2016 Jack P.
  *
  * Unframework is released under the MIT license.
  */
 
-namespace Unf\HTTP;
+namespace Unf;
+
+use ArrayAccess;
 
 /**
  * @author Jack P.
- * @package Unf\HTTP
+ * @package Unf
  * @since 0.1
  */
-class ParameterBag
+class ParameterBag implements ArrayAccess
 {
     /**
      * @var array
@@ -63,5 +65,29 @@ class ParameterBag
     public function get($property, $fallback = null)
     {
         return isset($this->properties[$property]) ? $this->properties[$property] : $fallback;
+    }
+
+
+    // -------------------------------------------------------------------------
+    // ArrayAccess
+
+    public function offsetExists($offset)
+    {
+        return isset($this->properties[$offset]);
+    }
+
+    public function offsetGet($offset)
+    {
+        return isset($this->properties[$offset]) ? $this->properties[$offset] : null;
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        $this->properties[$offset] = $value;
+    }
+
+    public function offsetUnset($offset)
+    {
+        unset($this->properties[$offset]);
     }
 }

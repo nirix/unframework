@@ -1,14 +1,14 @@
 <?php
 /*!
  * Unframework
- * Copyright (c) 2015 Jack P.
+ * Copyright (c) 2015-2016 Jack P.
  *
  * Unframework is released under the MIT license.
  */
 
 namespace Unf;
 
-use Unf\HTTP\Request;
+use Unf\Request;
 
 /**
  * @package Unf

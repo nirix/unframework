@@ -100,7 +100,7 @@ class Request
         static::$scriptName = $_SERVER['SCRIPT_NAME'];
         static::$basePath = rtrim(str_replace(basename(static::$scriptName), '', static::$scriptName), '/');
         static::$pathInfo = str_replace(static::$scriptName, '', static::$requestUri);
-        static::$pathInfo = '/' . ltrim(str_replace(dirname(static::$scriptName), '', static::$pathInfo), '/');
+        static::$pathInfo = static::preparePathInfo();
     }
 
     /**
@@ -135,5 +135,21 @@ class Request
         }
 
         return preg_match("#^{$path}$#", static::$pathInfo);
+    }
+
+    /**
+     * Get path info without the query string.
+     *
+     * @return string
+     */
+    protected static function preparePathInfo()
+    {
+        $path = '/' . ltrim(str_replace(dirname(static::$scriptName), '', static::$pathInfo), '/');
+
+        if (strpos($path, '?')) {
+            $path = str_replace('?' . $_SERVER['QUERY_STRING'], '', $path);
+        }
+
+        return $path;
     }
 }

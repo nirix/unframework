@@ -79,6 +79,11 @@ class Request
      */
     public static $basePath;
 
+    /**
+     * @var array
+     */
+    public static $segments = [];
+
     public function __construct()
     {
         static::init();
@@ -101,6 +106,8 @@ class Request
         static::$basePath = rtrim(str_replace(basename(static::$scriptName), '', static::$scriptName), '/');
         static::$pathInfo = str_replace(static::$scriptName, '', static::$requestUri);
         static::$pathInfo = static::preparePathInfo();
+
+        static::$segments = explode('/', trim(static::$pathInfo, '/'));
     }
 
     /**
@@ -135,6 +142,17 @@ class Request
         }
 
         return preg_match("#^{$path}$#", static::$pathInfo);
+    }
+
+    /**
+     * @param integer $index
+     * @param mixed   $fallback
+     *
+     * @return mixed
+     */
+    public static function seg($index, $fallback = null)
+    {
+        return isset(static::$segments[$index]) ? static::$segments[$index] : $fallback;
     }
 
     /**

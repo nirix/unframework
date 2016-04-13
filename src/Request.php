@@ -162,7 +162,7 @@ class Request
      */
     protected static function preparePathInfo()
     {
-        $path = '/' . ltrim(str_replace(dirname(static::$scriptName), '', static::$pathInfo), '/');
+        $path = '/' . trim(preg_replace('%^' . dirname(static::$scriptName) . '%i', '', static::$pathInfo), '/');
 
         if (strpos($path, '?')) {
             $path = str_replace('?' . $_SERVER['QUERY_STRING'], '', $path);
